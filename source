@@ -2881,6 +2881,11 @@ function BootDomain()
 			end
 		end
 	end
+	for _, child in ipairs(game:GetService("CoreGui"):GetChildren()) do
+		if child.Name == "Domain" and child ~= Domain.Domain then
+			child:Destroy()
+		end
+	end
 	Domain.Main.Position = UDim2.new(1.001,0,0.262,0)
 	Domain.Main.Shadow.ImageTransparency = 1
 	Domain.ToggleButton.Rotation = 90
@@ -2894,6 +2899,7 @@ function BootDomain()
 	if game.CreatorId == 0 then
 		wait(1)
 	else
+		Domain.Domain.Parent = game:GetService("CoreGui")
 		AntiKick()
 		AntiAFK()
 	end
