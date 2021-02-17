@@ -2787,48 +2787,7 @@ function Notify(Content,Font,Color)
 	end)
 end
 
-function BootDomain()
-	
-	Domain.Other.Watermark.Text.Text = "Domain "..ReleaseType.." v"..tostring(Release)
-	local Player = game.Players.LocalPlayer
-	if not V2 and not table.find(Developers,Player.UserId) then
-		Notify("Domain V2 isn't ready yet, try this again when announced","GothamBold",Color3.fromRGB(255, 163, 5))
-		wait(NotificationDuration)
-		Domain.Domain:Destroy()
-	else
-		if not table.find(Developers,Player.UserId) then
-		if ReleaseType == "Beta" then
-			if not table.find(Beta,Player.UserId) then
-				
-					Notify("Hey! You aren't a beta tester!","GothamBold",Color3.fromRGB(255, 163, 5))
-				wait(NotificationDuration)
-				Domain.Domain:Destroy()
-			end
-			end
-		end
-	end
-	Domain.Main.Position = UDim2.new(1.001,0,0.262,0)
-	Domain.Main.Shadow.ImageTransparency = 1
-	Domain.ToggleButton.Rotation = 90
-	Notify("Welcome, "..Player.Name,"GothamBold",Color3.fromRGB(0, 100, 147))
-	if table.find(Banned,Player.UserId) then
-		Notify("You have been banned from Domain V2, booting Domain V1","GothamBlack",Color3.fromRGB(170, 0, 0))
-		LoadDomainV1()
-		wait(NotificationDuration)
-		Domain.Domain:Destroy()
-	end
-	if game.CreatorId == 0 then
-		wait(1)
-	else
-		AntiKick()
-		AntiAFK()
-	end
-	if not AutoExecute or game.CreatorId == 0 then
-		OpenSidebar()
-	end
-end
 
-BootDomain()
 
 function LoadDomainV1()
 	Execute("https://raw.githubusercontent.com/shlexsoftworks/mainDomain/main/source")
@@ -2900,6 +2859,51 @@ function AntiAfk()
 		end
 	end
 end
+
+
+function BootDomain()
+
+	Domain.Other.Watermark.Text.Text = "Domain "..ReleaseType.." v"..tostring(Release)
+	local Player = game.Players.LocalPlayer
+	if not V2 and not table.find(Developers,Player.UserId) then
+		Notify("Domain V2 isn't ready yet, try this again when announced","GothamBold",Color3.fromRGB(255, 163, 5))
+		wait(NotificationDuration)
+		Domain.Domain:Destroy()
+	else
+		if not table.find(Developers,Player.UserId) then
+			if ReleaseType == "Beta" then
+				if not table.find(Beta,Player.UserId) then
+
+					Notify("Hey! You aren't a beta tester!","GothamBold",Color3.fromRGB(255, 163, 5))
+					wait(NotificationDuration)
+					Domain.Domain:Destroy()
+				end
+			end
+		end
+	end
+	Domain.Main.Position = UDim2.new(1.001,0,0.262,0)
+	Domain.Main.Shadow.ImageTransparency = 1
+	Domain.ToggleButton.Rotation = 90
+	Notify("Welcome, "..Player.Name,"GothamBold",Color3.fromRGB(0, 100, 147))
+	if table.find(Banned,Player.UserId) then
+		Notify("You have been banned from Domain V2, booting Domain V1","GothamBlack",Color3.fromRGB(170, 0, 0))
+		LoadDomainV1()
+		wait(NotificationDuration)
+		Domain.Domain:Destroy()
+	end
+	if game.CreatorId == 0 then
+		wait(1)
+	else
+		AntiKick()
+		AntiAFK()
+	end
+	if not AutoExecute or game.CreatorId == 0 then
+		OpenSidebar()
+	end
+end
+
+BootDomain()
+
 
 game.Players.PlayerAdded:Connect(function()
 	if #game.Players:GetChildren() > 4 and Sidebaropen then
