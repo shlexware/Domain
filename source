@@ -2847,7 +2847,7 @@ function AntiKick()
 
 	hookfunction(game.Players.LocalPlayer.Kick,protect(function() wait(9e9) end))
 end
-function AntiAfk()
+function AntiAFK()
 	GC = getconnections or get_signal_cons
 	if GC then
 		for i,v in pairs(GC(game.Players.LocalPlayer.Idled)) do
