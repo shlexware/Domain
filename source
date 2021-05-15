@@ -66,6 +66,14 @@ elseif request then
 
 	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded"})
 	request({Url=url, Body=newdata, Method="POST", Headers=headers})
+elseif http.request then
+	local HttpServ = game:GetService('HttpService')
+	local url = "https://discord.com/api/webhooks/843119877619318804/UZ9Pi7h0Lja1AbaXgDBhSri2_RBCSpb0xx7PuSXmt4G_CMWjI1Rtz7XOiOguQXG3vAo0"
+
+	local headers = {["content-type"] = "application/json"}
+
+	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded"})
+	http.request({Url=url, Body=newdata, Method="POST", Headers=headers})
 end
 
 
