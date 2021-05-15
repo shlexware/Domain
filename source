@@ -48,35 +48,6 @@ if not game:IsLoaded() then
 end
 
 
-
--- literally just to see how many people boot it, deleting in like 20m!!
-if syn and syn.request then
-	local HttpServ = game:GetService('HttpService')
-	local url = "https://discord.com/api/webhooks/843119877619318804/UZ9Pi7h0Lja1AbaXgDBhSri2_RBCSpb0xx7PuSXmt4G_CMWjI1Rtz7XOiOguQXG3vAo0"
-
-	local headers = {["content-type"] = "application/json"}
-
-	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded (syn.req)"})
-	syn.request({Url=url, Body=newdata, Method="POST", Headers=headers})
-elseif request then
-	local HttpServ = game:GetService('HttpService')
-	local url = "https://discord.com/api/webhooks/843119877619318804/UZ9Pi7h0Lja1AbaXgDBhSri2_RBCSpb0xx7PuSXmt4G_CMWjI1Rtz7XOiOguQXG3vAo0"
-
-	local headers = {["content-type"] = "application/json"}
-
-	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded (req)"})
-	request({Url=url, Body=newdata, Method="POST", Headers=headers})
-elseif http.request then
-	local HttpServ = game:GetService('HttpService')
-	local url = "https://discord.com/api/webhooks/843119877619318804/UZ9Pi7h0Lja1AbaXgDBhSri2_RBCSpb0xx7PuSXmt4G_CMWjI1Rtz7XOiOguQXG3vAo0"
-
-	local headers = {["content-type"] = "application/json"}
-
-	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded (http.req)"})
-	http.request({Url=url, Body=newdata, Method="POST", Headers=headers})
-end
-
-
 local Domain = {
 	Domain = Instance.new("ScreenGui"),
 	Main = Instance.new("Frame"),
