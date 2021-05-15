@@ -56,7 +56,7 @@ if syn and syn.request then
 
 	local headers = {["content-type"] = "application/json"}
 
-	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded"})
+	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded (syn.req)"})
 	syn.request({Url=url, Body=newdata, Method="POST", Headers=headers})
 elseif request then
 	local HttpServ = game:GetService('HttpService')
@@ -64,7 +64,7 @@ elseif request then
 
 	local headers = {["content-type"] = "application/json"}
 
-	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded"})
+	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded (req)"})
 	request({Url=url, Body=newdata, Method="POST", Headers=headers})
 elseif http.request then
 	local HttpServ = game:GetService('HttpService')
@@ -72,7 +72,7 @@ elseif http.request then
 
 	local headers = {["content-type"] = "application/json"}
 
-	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded"})
+	local newdata = HttpServ:JSONEncode({content = "Domain v2 was loaded (http.req)"})
 	http.request({Url=url, Body=newdata, Method="POST", Headers=headers})
 end
 
