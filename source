@@ -15,6 +15,9 @@ if not game:IsLoaded() then
 	local UICorner = Instance.new("UICorner")
 	local text = Instance.new("TextLabel")
 	dmnwait.Name = "dmnwait"
+	if syn and syn.protect_gui then
+		syn.protect_gui(dmnwait)
+	end
 	dmnwait.Parent = game:GetService("CoreGui")
 	dmnwait.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	main.Name = "main"
@@ -46,6 +49,10 @@ if not game:IsLoaded() then
 	dmnwait:Destroy()
 	repeat wait(1) until game:IsLoaded() 
 end
+
+
+
+
 
 
 local Domain = {
@@ -351,7 +358,6 @@ local Domain = {
 
 if syn and syn.protect_gui then
 	syn.protect_gui(Domain.Domain)
-	print("Synapse X - Domain")
 end
 
 --Properties:
@@ -3251,14 +3257,14 @@ Domain.notice.TextWrapped = true
 
 V2 = true
 Key = "2r0jfv"
-Key2 = "lnjtq7"
-keyenabled = true
+Key2 = "br"
+keyenabled = false
 
 
-NotificationDuration = 6.5
+NotificationDuration = 7
 ReleaseType = "Release"
-Release = 1.33
-ReleaseFeature = "squashed bugs"
+Release = 1.39
+ReleaseFeature = "Open Sourced"
 DiscordLink = "discord.gg/XrHqjy6tBc"
 DomainPass = 16104485
 
@@ -3312,7 +3318,7 @@ DOMAIN_ENABLED = true
 
 customtitles = {
 	
-	[1] = {title="Patron Supporter",userids={000}},
+	[1] = {title="bum",userids={000}},
 	[2] = {title="Lynx Owner",userids={23736476,98645}},
 	[3] = {title="Magnius Owner, Domain Staff",userids={83381940}},
 	[4] = {title="The longest fellow",userids={1224384865}},
@@ -3325,14 +3331,13 @@ customtitles = {
 	
 	
 }
-Disguised = {131040825,235,23514,5467,365743424,53464572524,3734536758,352341235,47453,4,65635246,3252657624,36355241246,234646356586854,12312645,76585234,12474563254,7567368676796341534457,68568696774,63,24,536474846452}
 Admins = {669686927,76237634,89779573,37962366,1984655763,262635913,1015797562,719084364,839408951,1373837031,2298490899,25798996,415918665,439204081}
 Showcasers = {434928087,1598108139,2325926644,254782537,261882701,839408951,2403423571,941788712}
 Banned = {17241083,26892987,20655358,10516000,660242324,225493776}
 Developers = {304343782}
 loldiscord = {"dude this is so cool","Domain","showcase this","watch this space","bruh","use magnius - rexi","domain winning","make it trending on twitter","oops","if this isnt in your auto exec, i will find you","preparing for lift off","dababy car","underrated","sirmeme make a video on domain hub","you know how i be, i just poopin","this table is long dude","discord.gg/shlex","boost the server damn it","pog champ","imagine trying to crack domain hub"}
 
-Beta = {130974538,1944310458,684497103,130701262,1024179351,1648382886,2395488379,1645783740,293463873,2230377215,409935083,55135104,488914336,669686927,262635913,1015797562,523750872,719084364,1031364103,2375349522,238834532,1139266612,2220153812}
+Beta = {0}
 AntiExploits = {
 
 	Venti = {
@@ -5164,7 +5169,9 @@ end
 function BootDomain()
 	if DOMAIN_ENABLED == true then
 		
-	
+		Notify("Domain Hub X is in development, keep up to date in the Discord!","GothamBlack",Color3.fromRGB(0, 78, 115))
+		wait(0.3)
+		Notify("Running Domain Hub OpenSourced","GothamSemibold",Color3.fromRGB(154, 18, 222))
 		local Player = game.Players.LocalPlayer
 		
 		if table.find(Banned,Player.UserId) then
@@ -5247,31 +5254,7 @@ function BootDomain()
 		if friendsingame == 0 then
 			Domain.amount_2.Text = "None are in this game"	
 		end
-		if table.find(Developers,Player.UserId) or table.find(Admins,Player.UserId) then
-			if game.CreatorId ~= 0 then
-				if game:GetService("CoreGui"):FindFirstChild("Domain") then
-					Player.Chatted:Connect(function(Message)
-						if Message == "/domain" and Player ~= game.Players.LocalPlayer and enabled then
-							game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w "..Player.Name.." ".."Domain "..ReleaseType.. " v"..Release, "All")
-							game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/leave", "All")
-						end	
-						if Message == "/kick "..game.Players.LocalPlayer.Name and enabled then
-							game:Shutdown()
-							end
-							if Message == "/refresh "..game.Players.LocalPlayer.Name and enabled then
-								refresh()
-							end
-							if Message == "/respawn "..game.Players.LocalPlayer.Name and enabled then
-								respawn()
-							end
-							if Message == "/kill "..game.Players.LocalPlayer.Name and enabled then
-								Kill(game.Players.LocalPlayer)
-							end
-					end)
-				end
-			end
-		end
-		end
+	end
 		for _, exp in pairs(BackgroundExploits) do
 
 			for _, place in pairs(exp.PlaceIds) do
@@ -5485,7 +5468,7 @@ bindable.Event:Connect(Notify)
 
 game.Players.PlayerRemoving:Connect(function(Player)
 	if game.Players.LocalPlayer:IsFriendsWith(Player.UserId) then
-		friendsingame = friendsingame - 1
+		friendsingame = friendsingame + 1
 		Domain.amount_2.Text = friendsingame.." are in this server"	
 	end
 	if friendsingame == 0 then
@@ -5781,7 +5764,7 @@ while true do
 	if friendsonline == 1 then
 		Domain.amount.Text = "You have "..tostring(friendsonline).." friend online"
 	elseif friendsonline == 0 then
-		Domain.amount.Text = "You have no friends"
+		Domain.amount.Text = "You have no friends online"
 	else
 		Domain.amount.Text = "You have "..tostring(friendsonline).." friends online"
 	end
