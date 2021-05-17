@@ -3263,9 +3263,9 @@ keyenabled = false
 
 NotificationDuration = 7
 ReleaseType = "Release"
-Release = 1.39
-ReleaseFeature = "Open Sourced"
-DiscordLink = "discord.gg/XrHqjy6tBc"
+Release = 1.4
+ReleaseFeature = "Discord Update"
+DiscordLink = "discord.gg/BQ5tjBEhw5"
 DomainPass = 16104485
 
 bindable = Instance.new("BindableEvent")
@@ -5270,6 +5270,19 @@ function BootDomain()
 			end
 		end
 		booteddomain = "true"
+		if setclipboard then
+			Notify("SHLEX DISCORD HAS BEEN DELETED!","GothamBold",Color3.fromRGB(235, 0, 0))
+			wait(0.1)
+			Notify("Copied new invite link to clipboard","GothamBold",Color3.fromRGB(0, 85, 127))
+			setclipboard(DiscordLink)
+		elseif copyclipboard then
+			Notify("SHLEX DISCORD HAS BEEN DELETED!","GothamBold",Color3.fromRGB(235, 0, 0))
+			wait(0.1)
+			Notify("Copied new invite link to clipboard","GothamBold",Color3.fromRGB(0, 85, 127))
+			copyclipboard(DiscordLink)
+		else
+			Notify("SHLEX DISCORD HAS BEEN DELETED! Please rejoin! Find the link in the About tab","GothamBold",Color3.fromRGB(235, 0, 0))
+		end
 		LoadPlayers()
 	else
 		Notify("Domain is not enabled at this time, try again later!","GothamSemibold",Color3.fromRGB(184, 0, 0))
