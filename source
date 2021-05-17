@@ -5270,14 +5270,15 @@ function BootDomain()
 			end
 		end
 		booteddomain = "true"
+		wait(4)
 		if setclipboard then
 			Notify("SHLEX DISCORD HAS BEEN DELETED!","GothamBold",Color3.fromRGB(235, 0, 0))
-			wait(0.1)
+			wait(1)
 			Notify("Copied new invite link to clipboard","GothamBold",Color3.fromRGB(0, 85, 127))
 			setclipboard(DiscordLink)
 		elseif copyclipboard then
 			Notify("SHLEX DISCORD HAS BEEN DELETED!","GothamBold",Color3.fromRGB(235, 0, 0))
-			wait(0.1)
+			wait(1)
 			Notify("Copied new invite link to clipboard","GothamBold",Color3.fromRGB(0, 85, 127))
 			copyclipboard(DiscordLink)
 		else
