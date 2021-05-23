@@ -5166,6 +5166,8 @@ function LoadTheme(BG1Color,BG2Color,LogoIcon)
 
 end
 
+
+
 function BootDomain()
 	if DOMAIN_ENABLED == true then
 		
@@ -5271,19 +5273,7 @@ function BootDomain()
 		end
 		booteddomain = "true"
 		wait(4)
-		if setclipboard then
-			Notify("SHLEX DISCORD HAS BEEN DELETED!","GothamBold",Color3.fromRGB(235, 0, 0))
-			wait(1)
-			Notify("Copied new invite link to clipboard","GothamBold",Color3.fromRGB(0, 85, 127))
-			setclipboard(DiscordLink)
-		elseif copyclipboard then
-			Notify("SHLEX DISCORD HAS BEEN DELETED!","GothamBold",Color3.fromRGB(235, 0, 0))
-			wait(1)
-			Notify("Copied new invite link to clipboard","GothamBold",Color3.fromRGB(0, 85, 127))
-			copyclipboard(DiscordLink)
-		else
-			Notify("SHLEX DISCORD HAS BEEN DELETED! Please rejoin! Find the link in the About tab","GothamBold",Color3.fromRGB(235, 0, 0))
-		end
+		Notify("SHLEX DISCORD HAS BEEN DELETED! Please rejoin! Find the link in the About tab","GothamBold",Color3.fromRGB(235, 0, 0))
 		LoadPlayers()
 	else
 		Notify("Domain is not enabled at this time, try again later!","GothamSemibold",Color3.fromRGB(184, 0, 0))
