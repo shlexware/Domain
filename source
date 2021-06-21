@@ -3490,7 +3490,7 @@ BackgroundExploits = {
 		PlaceIds = {286090429,2377868063,263761432,292439477,3233893879,3527629287,2555870920,5081773298},
 		PremiumOnly = false,
 		WaitDuration = 0,
-		Loadstring = "https://darkhub.xyz/script",
+		Loadstring = "https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/DarkHubLoadstring",
 	},
 	madcity = {
 		Name = "Mad City",
