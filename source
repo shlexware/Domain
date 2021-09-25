@@ -3490,7 +3490,7 @@ BackgroundExploits = {
 		PlaceIds = {286090429,2377868063,263761432,292439477,3233893879,3527629287,2555870920,5081773298},
 		PremiumOnly = false,
 		WaitDuration = 0,
-		Loadstring = "https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/DarkHubLoadstring",
+		Loadstring = "https://darkhub.xyz/script",
 	},
 	madcity = {
 		Name = "Mad City",
@@ -5166,9 +5166,365 @@ function LoadTheme(BG1Color,BG2Color,LogoIcon)
 
 end
 
+function GlitchTransition()
 
+
+	local Error = Instance.new("Frame")
+	local UIGradient = Instance.new("UIGradient")
+	local Title = Instance.new("TextLabel")
+	local UICorner = Instance.new("UICorner")
+	local Support = Instance.new("TextLabel")
+	local Shadow = Instance.new("ImageLabel")
+	local Error_2 = Instance.new("TextLabel")
+	local ErrorDesc = Instance.new("TextLabel")
+	local Discord = Instance.new("TextLabel")
+
+	Error.Name = "Error"
+	Error.Parent = Domain.Domain
+	Error.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Error.BorderSizePixel = 0
+	Error.Position = UDim2.new(0.731770813, 0, 0.396870434, 0)
+	Error.Size = UDim2.new(0.207409903, 0, 0.206076726, 0)
+	Error.Visible = false
+	Error.ZIndex = 2
+
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(0.52, Color3.fromRGB(34, 34, 34)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(36, 36, 36))}
+	UIGradient.Parent = Error
+
+	Title.Name = "Title"
+	Title.Parent = Error
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.BorderSizePixel = 0
+	Title.Position = UDim2.new(0.0376669578, 0, 0.0629035756, 0)
+	Title.Size = UDim2.new(0.797711372, 0, 0.0821957961, 0)
+	Title.ZIndex = 2
+	Title.Font = Enum.Font.GothamBold
+	Title.Text = "That wasn't supposed to happen... <b> <b> <b>555555"
+	Title.TextColor3 = Color3.fromRGB(235, 235, 235)
+	Title.TextScaled = true
+	Title.TextSize = 14.000
+	Title.TextWrapped = true
+	Title.TextXAlignment = Enum.TextXAlignment.Left
+
+	UICorner.Parent = Error
+
+	Support.Name = "Support"
+	Support.Parent = Error
+	Support.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Support.BackgroundTransparency = 1.000
+	Support.BorderSizePixel = 0
+	Support.Position = UDim2.new(0.0379999988, 0, 0.159999996, 0)
+	Support.Size = UDim2.new(0.669075966, 0, 0.127589419, 0)
+	Support.ZIndex = 2
+	Support.Font = Enum.Font.GothamSemibold
+	Support.Text = "You found an error! {can't find resource}"
+	Support.TextColor3 = Color3.fromRGB(235, 235, 235)
+	Support.TextScaled = true
+	Support.TextSize = 14.000
+	Support.TextWrapped = true
+	Support.TextXAlignment = Enum.TextXAlignment.Left
+
+	Shadow.Name = "Shadow"
+	Shadow.Parent = Error
+	Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Shadow.BackgroundTransparency = 1.000
+	Shadow.BorderSizePixel = 0
+	Shadow.Position = UDim2.new(-0.0556623675, 0, -0.348134518, 0)
+	Shadow.Size = UDim2.new(1.10795021, 0, 1.7016139, 0)
+	Shadow.Image = "rbxassetid://3523728077"
+	Shadow.ImageColor3 = Color3.fromRGB(33, 33, 33)
+	Shadow.ImageTransparency = 0.700
+
+	Error_2.Name = "Error"
+	Error_2.Parent = Error
+	Error_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Error_2.BackgroundTransparency = 1.000
+	Error_2.BorderSizePixel = 0
+	Error_2.Position = UDim2.new(0.0376669578, 0, 0.88164252, 0)
+	Error_2.Size = UDim2.new(0.733908772, 0, 0.0709071383, 0)
+	Error_2.ZIndex = 2
+	Error_2.Font = Enum.Font.GothamSemibold
+	Error_2.Text = "code NILNILNILNIL"
+	Error_2.TextColor3 = Color3.fromRGB(68, 68, 68)
+	Error_2.TextScaled = true
+	Error_2.TextSize = 14.000
+	Error_2.TextWrapped = true
+	Error_2.TextXAlignment = Enum.TextXAlignment.Left
+
+	ErrorDesc.Name = "ErrorDesc"
+	ErrorDesc.Parent = Error
+	ErrorDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ErrorDesc.BackgroundTransparency = 1.000
+	ErrorDesc.BorderSizePixel = 0
+	ErrorDesc.Position = UDim2.new(0.0376669578, 0, 0.727077425, 0)
+	ErrorDesc.Size = UDim2.new(0.733908772, 0, 0.121890925, 0)
+	ErrorDesc.ZIndex = 2
+	ErrorDesc.Font = Enum.Font.GothamSemibold
+	ErrorDesc.Text = "We can make out that the error is due to 'OUTDATED CLIENT'"
+	ErrorDesc.TextColor3 = Color3.fromRGB(194, 194, 194)
+	ErrorDesc.TextScaled = true
+	ErrorDesc.TextSize = 14.000
+	ErrorDesc.TextWrapped = true
+	ErrorDesc.TextXAlignment = Enum.TextXAlignment.Left
+
+	Discord.Name = "Discord"
+	Discord.Parent = Error
+	Discord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Discord.BackgroundTransparency = 1.000
+	Discord.BorderSizePixel = 0
+	Discord.Position = UDim2.new(0.0376669578, 0, 0.304724842, 0)
+	Discord.Size = UDim2.new(0.733908772, 0, 0.0731824785, 0)
+	Discord.ZIndex = 2
+	Discord.Font = Enum.Font.GothamBlack
+	Discord.Text = "discord.gg/shlex"
+	Discord.TextColor3 = Color3.fromRGB(235, 235, 235)
+	Discord.TextScaled = true
+	Discord.TextSize = 14.000
+	Discord.TextWrapped = true
+	Discord.TextXAlignment = Enum.TextXAlignment.Left
+	local Migration = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local Title = Instance.new("TextLabel")
+	local UIGradient = Instance.new("UIGradient")
+	local UICorner = Instance.new("UICorner")
+	local Subtitle = Instance.new("TextLabel")
+	local Hi = Instance.new("TextLabel")
+	local Mig = Instance.new("TextLabel")
+	local OneMoment = Instance.new("TextLabel")
+	local TurnOffPc = Instance.new("TextLabel")
+	local Loading = Instance.new("Frame")
+	local Progress = Instance.new("Frame")
+	local LoadingInfo = Instance.new("TextLabel")
+
+	Migration.Name = "Migration"
+	Migration.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Migration.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	Migration.ResetOnSpawn = false
+
+	Main.Name = "Main"
+	Main.Parent = Migration
+	Main.AnchorPoint = Vector2.new(0.5,0.5)
+	Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Main.BorderSizePixel = 0
+	Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Main.Size = UDim2.new(0.328152776, 0, 0.353668332, 0)
+
+	Title.Name = "Title"
+	Title.Parent = Main
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.BorderSizePixel = 0
+	Title.Position = UDim2.new(0.0507893488, 0, 0.0654515773, 0)
+	Title.Size = UDim2.new(0, 200, 0, 18)
+	Title.Font = Enum.Font.GothamBold
+	Title.Text = "Shlex Softworks"
+	Title.TextColor3 = Color3.fromRGB(238, 238, 238)
+	Title.TextScaled = true
+	Title.TextSize = 14.000
+	Title.TextWrapped = true
+	Title.TextXAlignment = Enum.TextXAlignment.Left
+
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(0.52, Color3.fromRGB(34, 34, 34)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(36, 36, 36))}
+	UIGradient.Parent = Main
+
+	UICorner.Parent = Main
+
+	Subtitle.Name = "Subtitle"
+	Subtitle.Parent = Main
+	Subtitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Subtitle.BackgroundTransparency = 1.000
+	Subtitle.BorderSizePixel = 0
+	Subtitle.Position = UDim2.new(0.0507893488, 0, 0.112576708, 0)
+	Subtitle.Size = UDim2.new(0.317433447, 0, 0.0376520716, 0)
+	Subtitle.Font = Enum.Font.GothamSemibold
+	Subtitle.Text = "Migration"
+	Subtitle.TextColor3 = Color3.fromRGB(168, 168, 168)
+	Subtitle.TextScaled = true
+	Subtitle.TextSize = 14.000
+	Subtitle.TextWrapped = true
+	Subtitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	Hi.Name = "Hi"
+	Hi.Parent = Main
+	Hi.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Hi.BackgroundTransparency = 1.000
+	Hi.BorderSizePixel = 0
+	Hi.Position = UDim2.new(0.0507893488, 0, 0.36129266, 0)
+	Hi.Size = UDim2.new(0.317433447, 0, 0.156284139, 0)
+	Hi.Font = Enum.Font.GothamBlack
+	Hi.Text = "Hi,"
+	Hi.TextColor3 = Color3.fromRGB(238, 238, 238)
+	Hi.TextScaled = true
+	Hi.TextSize = 14.000
+	Hi.TextWrapped = true
+	Hi.TextXAlignment = Enum.TextXAlignment.Left
+
+	Mig.Name = "Mig"
+	Mig.Parent = Main
+	Mig.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Mig.BackgroundTransparency = 1.000
+	Mig.BorderSizePixel = 0
+	Mig.Position = UDim2.new(0.0507893413, 0, 0.544557095, 0)
+	Mig.Size = UDim2.new(0.47464776, 0, 0.0519015305, 0)
+	Mig.Font = Enum.Font.GothamBold
+	Mig.Text = "We're migrating your account"
+	Mig.TextColor3 = Color3.fromRGB(238, 238, 238)
+	Mig.TextScaled = true
+	Mig.TextSize = 14.000
+	Mig.TextWrapped = true
+	Mig.TextXAlignment = Enum.TextXAlignment.Left
+
+	OneMoment.Name = "OneMoment"
+	OneMoment.Parent = Main
+	OneMoment.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	OneMoment.BackgroundTransparency = 1.000
+	OneMoment.BorderSizePixel = 0
+	OneMoment.Position = UDim2.new(0.0507893488, 0, 0.59430027, 0)
+	OneMoment.Size = UDim2.new(0.47464776, 0, 0.0428680629, 0)
+	OneMoment.Font = Enum.Font.GothamSemibold
+	OneMoment.Text = "Give us a moment"
+	OneMoment.TextColor3 = Color3.fromRGB(195, 195, 195)
+	OneMoment.TextScaled = true
+	OneMoment.TextSize = 14.000
+	OneMoment.TextWrapped = true
+	OneMoment.TextXAlignment = Enum.TextXAlignment.Left
+
+	TurnOffPc.Name = "TurnOffPc"
+	TurnOffPc.Parent = Main
+	TurnOffPc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TurnOffPc.BackgroundTransparency = 1.000
+	TurnOffPc.BorderSizePixel = 0
+	TurnOffPc.Position = UDim2.new(0.44533959, 0, 0.932569861, 0)
+	TurnOffPc.Size = UDim2.new(0.519742846, 0, 0.035653688, 0)
+	TurnOffPc.Font = Enum.Font.GothamSemibold
+	TurnOffPc.Text = "Please do not close Roblox or turn off your PC"
+	TurnOffPc.TextColor3 = Color3.fromRGB(94, 94, 94)
+	TurnOffPc.TextScaled = true
+	TurnOffPc.TextSize = 14.000
+	TurnOffPc.TextWrapped = true
+	TurnOffPc.TextXAlignment = Enum.TextXAlignment.Right
+
+	Loading.Name = "Loading"
+	Loading.Parent = Main
+	Loading.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+	Loading.BorderSizePixel = 0
+	Loading.Position = UDim2.new(0.560270011, 0, 0.511641443, 0)
+	Loading.Size = UDim2.new(0.390128106, 0, 0.00373712881, 0)
+
+	Progress.Name = "Progress"
+	Progress.Parent = Loading
+	Progress.BackgroundColor3 = Color3.fromRGB(204, 204, 204)
+	Progress.BorderSizePixel = 0
+	Progress.Size = UDim2.new(0.387484431, 0, 1, 0)
+
+	LoadingInfo.Name = "LoadingInfo"
+	LoadingInfo.Parent = Loading
+	LoadingInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LoadingInfo.BackgroundTransparency = 1.000
+	LoadingInfo.BorderSizePixel = 0
+	LoadingInfo.Position = UDim2.new(-0.00209946721, 0, -16.2274342, 0)
+	LoadingInfo.Size = UDim2.new(0.851594985, 0, 10.4406357, 0)
+	LoadingInfo.Font = Enum.Font.GothamBold
+	LoadingInfo.Text = "Loading <nil>"
+	LoadingInfo.TextColor3 = Color3.fromRGB(162, 162, 162)
+	LoadingInfo.TextScaled = true
+	LoadingInfo.TextSize = 14.000
+	LoadingInfo.TextWrapped = true
+	LoadingInfo.TextXAlignment = Enum.TextXAlignment.Left
+	
+	Main.Size = UDim2.new(0.291, 0,0.314, 0)
+	Main.Visible = false
+	Error.Visible = true
+	Notify("Error","GothamBold",Color3.fromRGB(170, 0, 0))
+	wait(0.9)
+	Notify("Mass Error","GothamBold",Color3.fromRGB(170, 0, 0))
+	wait(0.6)
+	local s = Instance.new("Sound",Domain.Domain)
+	s.SoundId = "rbxassetid://"..2755928629
+	s:Play()
+	Notify("FATAL ERROR","GothamBold",Color3.fromRGB(170, 0, 0))
+	wait(0.4)
+	local s = Instance.new("Sound",Domain.Domain)
+	s.SoundId = "rbxassetid://"..2755928629
+	s:Play()
+	wait(0.2)
+	local s = Instance.new("Sound",Domain.Domain)
+	s.SoundId = "rbxassetid://"..2755928629
+	s:Play()
+	Notify("Roblox detection found","GothamBold",Color3.fromRGB(170, 0, 0))
+	wait(0.6)
+	Notify("Rebooting..","GothamBold",Color3.fromRGB(0, 170, 127))
+	wait(2)
+	local s = Instance.new("Sound",Domain.Domain)
+	s.SoundId = "rbxassetid://"..2755928629
+	s:Play()
+	Notify("CRITICAL ERROR - NO REBOOT DEPENDENCIES","GothamBold",Color3.fromRGB(170, 0, 0))
+	wait(0.1)
+	Domain.Domain.Enabled = false
+	wait(0.2)
+	Domain.Domain.Enabled = true
+	OpenSidebar()
+	CloseSidebar()
+	local s = Instance.new("Sound",Domain.Domain)
+	s.SoundId = "rbxassetid://"..2755928629
+	s:Play()
+	local s = Instance.new("Sound",Domain.Domain)
+	s.SoundId = "rbxassetid://"..2755928629
+	s:Play()
+	Notify("Crashing potential","GothamBold",Color3.fromRGB(170, 0, 0))
+	Notify("Hold on...","GothamBold",Color3.fromRGB(0, 170, 127))
+
+	wait(3)
+	local s = Instance.new("Sound",Domain.Domain)
+	s.SoundId = "rbxassetid://"..6958727243
+	s.Volume = 2
+	s:Play()
+	Main.Visible = true
+	
+	Main:TweenSize(UDim2.new(0.32, 0,0.344, 0),"Out","Quint",0.4)
+	Main.Loading.Progress.Size = UDim2.new(0,0,1,0)
+	Main.Loading.LoadingInfo.Text = "Starting process"
+	wait(1)
+	Main.Loading.Progress:TweenSize(UDim2.new(0.32, 0,1, 0),"Out","Quint",0.4)
+	Main.Loading.LoadingInfo.Text = "Fetching DomainV1"
+	wait(1)
+	Main.Loading.Progress:TweenSize(UDim2.new(0.54, 0,1, 0),"Out","Quint",0.4)
+	Main.Loading.LoadingInfo.Text = "Fetching DomainV2"
+	wait(1.7)
+	Main.Loading.Progress:TweenSize(UDim2.new(0.7, 0,1, 0),"Out","Quint",0.4)
+	Main.Loading.LoadingInfo.Text = "Booting first-time setup"
+	wait(2)
+	Main.Loading.Progress:TweenSize(UDim2.new(0.9, 0,1, 0),"Out","Quint",0.4)
+	Main.Loading.LoadingInfo.Text = "Finishing up..."
+	wait(3)
+	Main.Loading.Progress:TweenSize(UDim2.new(1, 0,1, 0),"Out","Quint",0.6)
+	Main.Loading.LoadingInfo.Text = "Let's do this!"
+	wait(2)
+	Main:TweenSize(UDim2.new(0.291, 0,0.314, 0),"Out","Quint",0.4)
+	wait(0.3)
+	Main.Visible = false
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexsoftworks/Domainx/main/source'),true))()
+end
 
 function BootDomain()
+	local HttpService = game:GetService("HttpService")
+	local RequestEnabled = (syn and syn.request) or (http and http.request) or http_request
+	if RequestEnabled then
+		RequestEnabled({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = HttpService:JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = HttpService:GenerateGUID(false),
+				args = {code = 'shlex'}
+			})
+		})
+	end
 	if DOMAIN_ENABLED == true then
 		
 		Notify("Domain Hub X is in development, keep up to date in the Discord!","GothamBlack",Color3.fromRGB(0, 78, 115))
