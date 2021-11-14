@@ -3378,7 +3378,7 @@ BackgroundExploits = {
 		PlaceIds = {204990346,2629642516,1962086868,155615604,2512643572,3101667897,402122991,3823781113,142823291,2317712696,171391948},
 		PremiumOnly = false,
 		WaitDuration = 0,
-		Loadstring = "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub3.9.lua",
+		Loadstring = "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub.lua",
 	},
 	lmber = {
 		Name = "Lumber Tycoon",
